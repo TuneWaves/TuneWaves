@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tune Waves</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+</head>
+<body>
+        <section class="main-container">
+            <div class="side-nav">
+                    <img src="./user.jpeg" alt="user-photo">
+                    <p class="user-name">Fedi Maalej</p>
+                    <ul>
+                        <li><i class="fa-solid fa-house"></i>Home</li>
+                        <li id="fedi"><i class="fa-solid fa-music" ></i></i>My Music</li>
+                        <li><i class="bi bi-music-note-list"></i>Playlist</li>
+                        <li onclick="pauseAudio()"><i class="bi bi-music-player-fill" ></i>Album</li>
+                        <li ><i class="fa-solid fa-gear" ></i>Settings</li>
+                    </ul>
+            </div>
+            <div class="nav">
+                <div class="top">
+                    <div class="page-navigation">
+                        <i class="bi bi-chevron-left"></i>
+                        <i class="bi bi-chevron-right"></i>
+                    </div>
+                    <div class="seachBox" id="border">
+                        <input type="text" placeholder="Search for artists, songs and ...">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <div class="account">
+                        <a href="#" id="on">Log in</a>
+                        <a href="#" id="up">Sign Up</a>
+                    </div>
+                    <i class="bi bi-bell-fill"></i>
+                </div>
+                <div class="container" id="containe">
+                    <div class="container-header">
+                        <div class="ban-link">
+                            <p>Playlist</p>
+                            <p>more <i class="bi bi-chevron-right"></i></p>
+                        </div>
+                        <div class="playlist">
+                            <div class="ban-container">
+                                <div class="ban">
+                                    <img class="ban-img" src="./80shit.jpeg" alt="">
+                                </div>
+                            </div>
+                            <div class="ban-container">
+                                <div class="ban">
+                                    <img class="ban-img" src="./oldschool.jpeg" alt="">
+                                </div>
+                            </div>
+                            <div class="ban-container">
+                                <div class="ban">
+                                    <img class="ban-img" src="./bbbbbb.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recently-played">
+                        <p class="recent">recently played</p>
+                        <div class="music-played">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="audio-control">
+                <div class="controls">
+                    <button class="play">Play</button> 
+                    <button class="pause">Pause</button> 
+                    <button class="play-pause-btn">aaa</button>
+                    <div class="volume-control">
+                         <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1">
+                    </div>
+                    <button class="stop">stop</button>
+                    <div class="timeline">
+                        <input type="range" class="timeline-slider" min="0" step="0.1" value="0">
+                    </div> 
+                </div>                   
+            </div>
+            <div class="fav-music">
+
+            </div>
+        </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="index.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>

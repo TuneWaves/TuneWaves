@@ -1,0 +1,157 @@
+function Music(songer,nameSong,img, music){
+   var  song={}
+   song.songer=songer
+   song.nameSong=nameSong
+   song.img=img
+   song.music = music
+   return song
+}
+
+function MakeMusic(){
+   var musicList={}
+   musicList.addMusic=add
+   musicList.serachMusic=search
+   musicList.myMusic=[]
+   return musicList
+}
+
+var add = function(music){
+   this.myMusic.push(music)
+ }
+
+ function each(coll, f) { 
+    if (Array.isArray(coll)) { 
+          for (var i = 0; i < coll.length; i++) { 
+                f(coll[i], i); 
+          } 
+    } else { 
+       for (var key in coll) { 
+                f(coll[key], key); 
+               } 
+            } 
+         }
+         function filter(array, predicate) {
+            var acc = [];
+            each(array, function(element) {
+               if (predicate(element)) {
+                  acc.push(element);
+               }
+            });
+            return acc;
+         }
+
+         
+         function inject(array) { 
+            each(array, function (e) {
+               
+               $('.music-played').append(`
+               <div class="music"  onclick="play()">
+               <img class="music-img" src="${e.img}" alt="">
+               <div class="music-desc">
+               <p id="title">${e.nameSong}</p>
+               <p id="artist">${e.songer}</p>
+               </div>
+               <div class="music-data">
+               <p id="">3:40</p>
+               <i class="bi bi-heart"></i>
+               </div>
+               <audio class="player" id="${e.nameSong.replace(/\s/g, '-')}">
+               <source src="${e.music}" type="audio/mpeg">
+               </audio>
+               </div>`
+               )
+               console.log(e)
+               $('.music').click(function(){
+                  var audioId = $(this).find('.player').attr('id');
+                  var audio = document.getElementById(audioId);
+                  audio.play();
+                  localStorage.setItem("music", JSON.stringify(audioId))
+               })
+            })
+         } 
+         JSON.parse(localStorage.getItem('music'))
+
+const x = document.getElementById("player");
+function play() {
+   x.play()   
+}
+
+function pauseAudio() { 
+   x.load(); 
+ } 
+
+
+
+
+var search = function(){
+   var searched = $('input').val();
+    console.log(searched)
+    var arr = filter(store.myMusic, function(e) { 
+       return e.songer.toLowerCase() === searched.toLowerCase() || e.nameSong.toLowerCase() === searched.toLowerCase(); 
+    });
+    inject(arr)
+   }
+
+
+   
+ var myMusic1=Music("The Weeknd","Save Your Tears","./images_page1/images/the weekendd.jpg","./music/Save Your Tears.mp3")
+ var myMusic2=Music("AYE 070 Shake","Escapism","./images_page1/images/escapism.jpg","./music/Escapism.mp3")
+ var myMusic3=Music("Calvin Harris, Dua Lipa" ," One Kiss","./images_page1/images/on kiss.jpg","./music/Save Your Tears.mp3")
+ var myMusic4=Music("2Pac " ,"All Eyez On Me","./images_page1/images/2pac.jpg","./music/Save Your Tears.mp3")
+ var myMusic5=Music("GIMS" , "Le prix Ã  payer","./images_page1/images/gims.jpg","./music/Save Your Tears.mp3")
+ var myMusic6=Music("Jennifer Lopez" ," Ain't Your Mama","./images_page1/images/jennifer.jpg","./music/Save Your Tears.mp3")
+ var myMusic7=Music("Michael Jackson" ,"They Don t Care..","./images_page1/images/michael.webp","./music/Save Your Tears.mp3")
+ var myMusic8=Music("Eminem" ,"Never Love Again","./images_page1/images/eminem.jpg","./music/Save Your Tears.mp3")
+ 
+ var store=MakeMusic()
+ store.addMusic(myMusic1)
+ store.addMusic(myMusic2)
+ store.addMusic(myMusic3)
+ store.addMusic(myMusic4)
+ store.addMusic(myMusic5)
+ store.addMusic(myMusic6)
+ store.addMusic(myMusic7)
+ store.addMusic(myMusic8)
+ 
+ /*  $(".bi-search").on("onclick",function(){
+    $(document).ready(function () {
+       $('.music-played').empty()
+       each(array, function (e) {
+          
+          $('.music-played').append(`
+`
+)
+      $('.music').click(function(){
+         localStorage.setItem("music", JSON.stringify(e))
+      })
+   })
+})
+}) */
+
+
+ $('.bi-search').click(function(){
+   $(document).ready(function () {
+      $('.music-played').empty()
+      store.serachMusic()
+   })
+})
+inject(store.myMusic)
+
+   $("#fedi").on("click", function(){
+      $("#containe").empty()
+      console.log("sirine")
+   
+    });
+    //sign_up
+    $("#up").on("click", function(){
+      $("#containe").hide()
+      console.log("sirine")
+    });
+
+
+    //log_in
+    $("#on").on("click", function(){
+      $("#containe").css('display', 'none')
+      console.log("sirine")
+   
+    });
