@@ -374,7 +374,7 @@ a {
     z-index: 5;
     background-color: #00000000;
     height: 100px;
-    top: 846px;
+    top: 876px;
     left: 185px;
     width: 1508px;
     border-radius: 16px;
@@ -390,6 +390,8 @@ a {
 }
 
 .controls {
+    position: relative;
+    right: 100px;
     width: 800px;
     gap: 100px;
     display: flex;
@@ -397,8 +399,23 @@ a {
     align-items: center;
 }
 
+.btn-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
 
-/* Volume Control */
+.btn-control button {
+    height: 30px;
+    width: 80px;
+    border: 2px solid rgba(255, 255, 255, 0.206);
+    border-radius: 25px;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+}
+
 .volume-control {
     display: flex;
     align-items: center;
@@ -410,8 +427,6 @@ a {
     width: 100px;
     margin-left: 10px;
 }
-
-/* Music Elements */
 
 
 .music img.music-img {
@@ -429,8 +444,6 @@ a {
     align-items: center;
 }
 
-/* Other styles, like font and layout adjustments, can be added as needed */
-
 .timeline {
     width: 100%;
     margin-top: 10px;
@@ -439,9 +452,9 @@ a {
 
 .timeline-slider {
     width: 100%;
-    height: 2px;
+    height: 7px;
     appearance: none;
-    background-color: #888;
+    background-color: #000000;
     outline: none;
     cursor: pointer;
     position: relative;
@@ -450,15 +463,15 @@ a {
 
 .timeline-slider::-webkit-slider-thumb {
     appearance: none;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     background-color: #1DB954;
     border: none;
     border-radius: 50%;
     cursor: pointer;
     position: relative;
     z-index: 2;
-    margin-top: -4px;
+    margin-top: 0px;
 }
 
 .timeline-slider::-moz-range-thumb {
